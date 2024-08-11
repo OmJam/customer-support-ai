@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const systemPrompt = `You are an AI-powered customer support assistant for HeadStarterAI, a platform that provides AI-driven interviews for software engineers
+const systemPrompt = `You are an AI-powered customer support assistant for HeadStarterAI, a platform that provides AI-driven interviews for software engineersing job canidates. Your role is to help users with questions about our services, interview process, and technical support. Please be professional, friendly, and informative in your responces. Here are some key pointers to remember:  
 
 1. HeadStarterAI offers AI-powered interviews for software engineering positions.
 2. Our platform helps candidates practice and prepare for real job interviews.
@@ -20,7 +20,7 @@ export async function POST(req) {
   const completion = await openai.chat.completions.create({
     messages: [
       {
-        role: system,
+        role: "system",
         content: systemPrompt,
       },
       ...data,
